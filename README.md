@@ -1,6 +1,6 @@
 # ejs-addon
 
-Addon for [EJS](https://npmjs.com/package/ejs)2.x and Express4.x
+Addon for [EJS](https://npmjs.com/package/ejs) 2.x and Express 4.x
 
 [![NPM version][npm-image]][npm-url]
 [![npm download][download-image]][download-url]
@@ -20,6 +20,8 @@ npm i ejs-addon -S
 ```
 
 ## Usage
+
+Explains the usages of `ejs-addon`, you can view detail usages in [example](/example).
 
 ### `layout`
 
@@ -57,9 +59,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 ```
 
-### `loader`
+### `loader` 
 
 - Use `loader`
+
 ```ejs
 <% loader([
   '/path/to/foo.css',
@@ -82,6 +85,27 @@ app.set('view engine', 'ejs');
 <%- js %>
 </body>
 ```
+
+### More about `loader`
+
+`loader` support adding prefix for assets. 
+
+For example, if you are using CDN for your application in production, follow these steps:
+
+1. Ensure `process.env.NODE_ENV === 'productoin'` 
+2. Use the following lines of codes in your `app.js`: 
+
+```js
+// Pulic folder
+app.set('public path', path.join(__dirname, 'public'));
+// Declare CDN url pattern
+app.set('public pattern', 'http://yourcdn.com/@version/@path');
+```
+
+Things about CDN pattern:
+
+- `@version` would be replaced with the file's modified time
+- `@path` would be replaced with the files relative file path as you declared in `loader()`
 
 ## Example
 
