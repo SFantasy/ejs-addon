@@ -68,7 +68,7 @@ function renderFile(filePath, opts, callback) {
       return callback(err, html);
     }
 
-    let layoutFile  = options.locals.layoutFile;
+    let layoutFile = options.locals.layoutFile;
 
     // Layout exists
     if (layoutFile) {
@@ -82,7 +82,7 @@ function renderFile(filePath, opts, callback) {
       delete options.locals.layoutFile;
 
       if (layoutFile.length > 0) {
-        let views  = options.settings.views;
+        let views = options.settings.views;
         const l = layoutFile;
 
         if (!Array.isArray(views)) {
