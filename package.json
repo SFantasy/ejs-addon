@@ -1,0 +1,28 @@
+{
+  "name": "ejs-addon",
+  "version": "1.0.0",
+  "description": "Addons for ejs template engine",
+  "keywords": [
+    "ejs",
+    "addon",
+    "express"
+  ],
+  "author": "Fantasy Shao <fantasyshao@icloud.com>",
+  "license": "MIT",
+  "repository": "git@github.com:SFantasy/ejs-addon.git",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint index.js",
+    "prepublish": "npm run lint"
+  },
+  "dependencies": {
+    "ejs": "^2.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.3.0",
+    "express": "^4.14.0"
+  }
+}
