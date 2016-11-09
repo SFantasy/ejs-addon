@@ -75,7 +75,7 @@ function renderFile(filePath, opts, callback) {
       const engine = options.settings['view engine'] || 'ejs';
       const desiredExt = `.${engine}`;
 
-      if (path.extname(layout) !== desiredExt) {
+      if (path.extname(layoutFile) !== desiredExt) {
         layoutFile += desiredExt;
       }
 
