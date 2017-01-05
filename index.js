@@ -102,8 +102,8 @@ function renderFile(filePath, opts, callback) {
       }
 
       options.body = html;
-      options.css = '';
-      options.js = '';
+      options.css = options.css || '';
+      options.js = options.js || '';
 
       return renderFile(layoutFile, options, callback);
     }
