@@ -70,6 +70,10 @@ function renderFile(filePath, opts, callback) {
 
     let layoutFile = options.locals.layoutFile;
 
+    if (layoutFile === undefined) {
+      layoutFile = options.layoutFile;
+    }
+
     // Layout exists
     if (layoutFile) {
       const engine = options.settings['view engine'] || 'ejs';
@@ -80,6 +84,7 @@ function renderFile(filePath, opts, callback) {
       }
 
       delete options.locals.layoutFile;
+      delete options.layoutFile;
 
       if (layoutFile.length > 0) {
         let views = options.settings.views;
@@ -97,6 +102,9 @@ function renderFile(filePath, opts, callback) {
       }
 
       options.body = html;
+      options.css = '';
+      options.js = '';
+
       return renderFile(layoutFile, options, callback);
     }
 
